@@ -1,6 +1,10 @@
 ##Plot_4
 source('Load_Power_Data.R')
 
+##Open the PNG graphics file device
+
+png(filename='plots/plot4.png')
+
 ##Create Plot
 
 par(mfrow = c(2,2))
@@ -18,6 +22,6 @@ legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_
 plot(power.dat$date.time, power.dat$Global_reactive_power, type = "l", xlab = "datetime"
      , ylab = "Global_reactive_power")
 
-##Save PNG file
+##Close the PNG graphics file device
 
-png(filename='plots/plot4.png')
+dev.off()
